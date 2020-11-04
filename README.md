@@ -14,4 +14,5 @@ make run_xyz - Run the transformations numbered x, y, z in succession.
 eg: make run_12 will greyscale first and then colour inversion.  
 
 make run_interactive - Run the program in interactive mode.  
+make reset - To unset the input and output filenames  
 make clean - Cleanup the environment.  
