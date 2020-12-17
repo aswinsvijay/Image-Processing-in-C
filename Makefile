@@ -19,17 +19,16 @@ run_%: $(EXEDIR)/main filenames.txt
 	@convert \
 	$(shell awk "NR==1" filenames.txt) \
 	-compress none \
-	$(shell awk "NR==1" filenames.txt).ppm
+	$(shell awk "NR==1" filenames.txt).ppm 2> /dev/null
 	@$(EXEDIR)/main \
 	$(shell awk "NR==1" filenames.txt).ppm \
 	$(shell awk "NR==2" filenames.txt).ppm \
 	$@
-	@rm -f $(shell awk "NR==1" filenames.txt).ppm
-	@convert \
+	-@convert \
 	$(shell awk "NR==2" filenames.txt).ppm \
 	-compress none \
-	$(shell awk "NR==2" filenames.txt)
-	@rm -f $(shell awk "NR==2" filenames.txt).ppm
+	$(shell awk "NR==2" filenames.txt) 2> /dev/null | true
+	@rm -f $(shell awk "NR==1" filenames.txt).ppm $(shell awk "NR==2" filenames.txt).ppm
 
 test_%:
 	@echo $(TESTDIR)/$@_in.* > filenames.txt

@@ -51,7 +51,7 @@ int main(int argc,char *argv[])
                            break;
                 case '2' : invert(img);
                            break;
-                default  : printf("Wrong option given, exiting...");
+                default  : printf("Wrong option given, exiting...\n");
                            return(0);
             }
         }
