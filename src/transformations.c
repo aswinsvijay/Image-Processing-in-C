@@ -141,7 +141,7 @@ void saturation(PPMimg *img)
         *(B->data+i)=(float*)malloc(sizeof(int)*B->n);
 
     float s;
-    printf("Enter saturation factor(0 to 1):");
+    printf("\tEnter saturation factor(0 to 1):");
     scanf("%f",&s);
 
     B->data[0][0]=(1.0-s)*rwt + s;

@@ -21,7 +21,6 @@ int main(int argc,char *argv[])
             printf("0. Exit\n1. Greyscale\n2. Colour invert\n3. Change Saturation\n");
             printf("Enter choice:");
             scanf(" %c",&ch);
-            printf("%d\n",(int)ch);
             switch(ch)
             {
                 case '1' : printf("Converting...\n");
@@ -34,8 +33,8 @@ int main(int argc,char *argv[])
                            printf("Writing...\n");
                            writePPM(outname,img);
                            break;
-                case '3' : saturation(img);
-                           printf("Converting...\n");
+                case '3' : printf("Converting...\n");
+                           saturation(img);
                            printf("Writing...\n");
                            writePPM(outname,img);
                            break;
