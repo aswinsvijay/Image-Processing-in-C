@@ -24,11 +24,12 @@ run_%: $(EXEDIR)/main filenames.txt
 	$(shell awk "NR==1" filenames.txt).ppm \
 	$(shell awk "NR==2" filenames.txt).ppm \
 	$@
+	@rm -f $(shell awk "NR==1" filenames.txt).ppm
 	@convert \
 	$(shell awk "NR==2" filenames.txt).ppm \
 	-compress none \
 	$(shell awk "NR==2" filenames.txt)
-	@rm -f $(shell awk "NR==1" filenames.txt).ppm $(shell awk "NR==2" filenames.txt).ppm
+	@rm -f $(shell awk "NR==2" filenames.txt).ppm
 
 test_%:
 	@echo $(TESTDIR)/$@_in.* > filenames.txt
