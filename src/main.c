@@ -18,7 +18,7 @@ int main(int argc,char *argv[])
         char ch;
         while(1)
         {
-            printf("0. Exit\n1. Greyscale\n2. Colour invert\n");
+            printf("0. Exit\n1. Greyscale\n2. Colour invert\n3. Change Saturation\n");
             printf("Enter choice:");
             scanf(" %c",&ch);
             printf("%d\n",(int)ch);
@@ -31,6 +31,11 @@ int main(int argc,char *argv[])
                            break;
                 case '2' : printf("Converting...\n");
                            invert(img);
+                           printf("Writing...\n");
+                           writePPM(outname,img);
+                           break;
+                case '3' : saturation(img);
+                           printf("Converting...\n");
                            printf("Writing...\n");
                            writePPM(outname,img);
                            break;
@@ -48,6 +53,8 @@ int main(int argc,char *argv[])
                 case '1' : greyscale(img);
                            break;
                 case '2' : invert(img);
+                           break;
+                case '3' : saturation(img);
                            break;
                 default  : printf("Wrong option given, exiting...\n");
                            return(0);

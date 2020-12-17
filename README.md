@@ -15,6 +15,7 @@ make run_xyz - Run the transformations numbered x, y, z in succession.
 
 1. Greyscale
 2. Colour Inversion  
+3. Change Saturation  
 eg: make run_12 will greyscale first and then colour inversion.  
 
 make run_interactive - Run the program in interactive mode.  
