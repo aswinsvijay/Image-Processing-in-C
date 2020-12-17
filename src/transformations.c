@@ -3,6 +3,10 @@
 #include "matrix.h"
 #include<stdlib.h>
 
+#define rwt 0.3
+#define gwt 0.59
+#define bwt 0.31
+
 void invert(PPMimg *img)
 {
     matrix A,B,C;
@@ -83,15 +87,15 @@ void greyscale(PPMimg *img)
     for(i=0;i<B->m;i++)
         *(B->data+i)=(float*)malloc(sizeof(int)*B->n);
 
-    B->data[0][0]=0.3;
-    B->data[0][1]=0.3;
-    B->data[0][2]=0.3;
-    B->data[1][0]=0.59;
-    B->data[1][1]=0.59;
-    B->data[1][2]=0.59;
-    B->data[2][0]=0.11;
-    B->data[2][1]=0.11;
-    B->data[2][2]=0.11;
+    B->data[0][0]=rwt;
+    B->data[0][1]=rwt;
+    B->data[0][2]=rwt;
+    B->data[1][0]=gwt;
+    B->data[1][1]=gwt;
+    B->data[1][2]=gwt;
+    B->data[2][0]=bwt;
+    B->data[2][1]=bwt;
+    B->data[2][2]=bwt;
 
     C=(matrix_t*)malloc(sizeof(matrix_t));
     C->m=1;
