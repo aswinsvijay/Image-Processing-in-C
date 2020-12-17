@@ -10,8 +10,6 @@ int main(int argc,char *argv[])
     inname  = argv[1];
     outname = argv[2];
     opt     = argv[3]+4;
-    
-    printf("%s\n%s\n%s\n",inname,outname,opt);
 
     PPMimg *img = readPPM(inname);
 
