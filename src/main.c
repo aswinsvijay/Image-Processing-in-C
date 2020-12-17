@@ -26,10 +26,18 @@ int main(int argc,char *argv[])
             printf("%d\n",(int)ch);
             switch(ch)
             {
-                case '1' : printf("Converting...\n");greyscale(img);printf("Writing...\n");writePPM(outname,img);break;
-                case '2' : printf("Converting...\n");invert(img);printf("Writing...\n");writePPM(outname,img);break;
+                case '1' : printf("Converting...\n");
+                           greyscale(img);
+                           printf("Writing...\n");
+                           writePPM(outname,img);
+                           break;
+                case '2' : printf("Converting...\n");
+                           invert(img);
+                           printf("Writing...\n");
+                           writePPM(outname,img);
+                           break;
                 case '0' : exit(0);
-                default : printf("Wrong option\n");
+                default  : printf("Wrong option\n");
             }
         }
     }
@@ -39,9 +47,12 @@ int main(int argc,char *argv[])
         {
             switch(opt[i])
             {
-                case '1' : greyscale(img);break;
-                case '2' : invert(img);break;
-                default : printf("Wrong option given, exiting...");exit(0);
+                case '1' : greyscale(img);
+                           break;
+                case '2' : invert(img);
+                           break;
+                default  : printf("Wrong option given, exiting...");
+                           return(0);
             }
         }
         writePPM(outname,img);
