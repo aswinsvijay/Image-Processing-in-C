@@ -6,7 +6,7 @@
 
 #define rwt 0.3
 #define gwt 0.59
-#define bwt 0.31
+#define bwt 0.11
 
 void invert(PPMimg *img)
 {
