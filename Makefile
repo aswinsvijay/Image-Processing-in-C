@@ -32,13 +32,13 @@ run_%: $(EXEDIR)/main filenames.txt
 
 test_%:
 	@echo $(TESTDIR)/$@_in.* > filenames.txt
-	@echo $(TESTDIR)/$@_out.ppm >> filenames.txt
+	@echo $(TESTDIR)/$@_in.* | sed s/in/out/g >> filenames.txt
 
 reset:
 	@rm -f filenames.txt
 
 clean:
-	@rm -f $(EXEDIR)/* filenames.txt $(TESTDIR)/*out.ppm
+	@rm -f $(EXEDIR)/* filenames.txt $(TESTDIR)/*out*
 	@rm -rf $(EXEDIR)
 
 $(EXEDIR):
